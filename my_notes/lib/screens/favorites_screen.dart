@@ -17,8 +17,34 @@ class FavoritesScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final note = favoriteNotes[index];
           return ListTile(
-            title: Text(note.title),
-            subtitle: Text(note.content),
+            title:  SelectableText(
+              note.title,
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.red,
+              ),
+              contextMenuBuilder: (context, editableTextState) {
+                return AdaptiveTextSelectionToolbar.buttonItems(
+                  anchors: editableTextState.contextMenuAnchors,
+                  buttonItems: editableTextState.contextMenuButtonItems,
+                );
+              },
+
+            ),
+            subtitle:  SelectableText(
+              note.content,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+              ),
+              contextMenuBuilder: (context, editableTextState) {
+                return AdaptiveTextSelectionToolbar.buttonItems(
+                  anchors: editableTextState.contextMenuAnchors,
+                  buttonItems: editableTextState.contextMenuButtonItems,
+                );
+              },
+
+            ),
             trailing: IconButton(
               icon: Icon(
                 note.isFavorite ? Icons.star : Icons.star_border,

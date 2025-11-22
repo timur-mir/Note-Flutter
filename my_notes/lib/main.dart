@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter/services.dart';
 import 'package:my_notes/providers/notes_provider.dart';
 import 'package:my_notes/screens/home_screen.dart';
 import 'package:provider/provider.dart';
+//import 'package:workmanager/workmanager.dart';
 import '../screens/add_note_screen.dart';
 import '../screens/favorites_screen.dart';
+import 'package:flutter/foundation.dart';
 
 void main() {
-  runApp(
+    runApp(
+
     ChangeNotifierProvider(
       create: (_) => NotesProvider(),
       child: const MyApp(),
@@ -23,6 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'Заметки',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const MainScreen(),
+      debugShowCheckedModeBanner:false ,
     );
   }
 }

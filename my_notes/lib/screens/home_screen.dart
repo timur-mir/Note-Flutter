@@ -29,8 +29,25 @@ class HomeScreen extends StatelessWidget {
               // final note = notesProvider.notes[index];
               final note = notes[index];
               return ListTile(
-                title: Text(note.title),
-                subtitle: Text(note.content),
+                title: Text(note.title,maxLines: 2,style: TextStyle(color: Colors.red)),
+                subtitle: SelectableText(
+                  note.content,
+                  maxLines: 5,
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.brown,
+                  ),
+                  contextMenuBuilder: (context, editableTextState) {
+                    return AdaptiveTextSelectionToolbar.buttonItems(
+                      anchors: editableTextState.contextMenuAnchors,
+                      buttonItems: editableTextState.contextMenuButtonItems,
+                    );
+                  },
+                  // toolbarOptions: ToolbarOptions(
+                  //   copy: true, // Включить возможность копирования
+                  //   selectAll: true, // Включить выделение всего текста
+                  // ),
+                ),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -56,7 +73,7 @@ class HomeScreen extends StatelessWidget {
           );
         },
       ),
-      backgroundColor: Color.fromARGB(142, 181, 116, 124),
+      backgroundColor: Color.fromARGB(255, 181, 231, 238),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.push(
           context,
