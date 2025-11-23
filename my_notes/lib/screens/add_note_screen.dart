@@ -69,7 +69,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
           ),
         ),
       ),
-      backgroundColor: Color.fromARGB(239, 251, 235, 150),
+      backgroundColor: Color.fromARGB(255, 232, 186, 186),
     );
   }
   void _showToast(BuildContext context) {
@@ -77,7 +77,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
     scaffold.showSnackBar(
       SnackBar(
         content: const Text('Заметка сохранена'),
-        backgroundColor:Color.fromARGB(255, 97, 3, 3),
+        backgroundColor:Color.fromARGB(255, 220, 170, 170),
         action: SnackBarAction(textColor:Color.fromARGB(255, 242, 247, 252),
             label: '', onPressed: scaffold.hideCurrentSnackBar),
       ),

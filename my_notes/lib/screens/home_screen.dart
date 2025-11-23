@@ -29,12 +29,12 @@ class HomeScreen extends StatelessWidget {
               // final note = notesProvider.notes[index];
               final note = notes[index];
               return ListTile(
-                title: Text(note.title,maxLines: 2,style: TextStyle(color: Colors.red)),
+                title: Text(note.title,maxLines: 2,style: TextStyle(color: Colors.red,fontSize: 18)),
                 subtitle: SelectableText(
                   note.content,
                   maxLines: 5,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     color: Colors.brown,
                   ),
                   contextMenuBuilder: (context, editableTextState) {
