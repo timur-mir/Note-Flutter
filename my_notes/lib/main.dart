@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_notes/providers/notes_provider.dart';
 import 'package:my_notes/screens/home_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 //import 'package:workmanager/workmanager.dart';
 import '../screens/add_note_screen.dart';
 import '../screens/favorites_screen.dart';
